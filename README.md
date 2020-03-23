@@ -7,3 +7,7 @@ cat {*.jpg,*.jpeg} | ffmpeg -y -f image2pipe -vcodec mjpeg -i - -vf "setpts=11\*
 
 ==== Youtube-dl ====<br>
 youtube-dl --extract-audio --audio-format mp3 "https://www.youtube.com/watch?v=....."
+
+
+==== normalize ===<br>
+ffmpeg -i input.wav -filter:a loudnorm output.wav

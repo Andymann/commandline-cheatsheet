@@ -8,6 +8,9 @@ cat {\*.jpg,\*.jpeg} | ffmpeg -y -f image2pipe -vcodec mjpeg -i - -vf "setpts=11
 === MAC Create video from images. Random order ===<br>
 find -E . -regex '.\*(JPG|jpeg|jpg)' | sort -R | tr "\n" "\0" | xargs -0 cat | ffmpeg -y -f image2pipe -vcodec mjpeg -i - -vf "setpts=1\*25*PTS","scale=1280:720:force_original_aspect_ratio=decrease,pad=1280:720:(ow-iw)/2:(oh-ih)/2" out.mp4
 
+===MAC Resize Image, set longest edge to x pixels ===<br>
+sips -Z 719 *.jpg
+
 
 ==== Youtube-dl ====<br>
 youtube-dl --extract-audio --audio-format mp3 "https://www.youtube.com/watch?v=....."

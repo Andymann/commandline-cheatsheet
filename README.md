@@ -18,3 +18,7 @@ youtube-dl --extract-audio --audio-format mp3 "https://www.youtube.com/watch?v=.
 
 ==== normalize ===<br>
 ffmpeg -i input.wav -filter:a loudnorm output.wav
+
+=== MAC resize images recursive fixed height ===<br>
+find -E . -regex '.*(JPG|jpeg|jpg)' | sort -R | tr "\n" "\0" | xargs -0 sips --resampleHeight 500
+

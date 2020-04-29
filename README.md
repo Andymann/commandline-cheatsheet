@@ -22,3 +22,10 @@ ffmpeg -i input.wav -filter:a loudnorm output.wav
 === MAC resize images recursive fixed height ===<br>
 find -E . -regex '.*(JPG|jpeg|jpg)' | sort -R | tr "\n" "\0" | xargs -0 sips --resampleHeight 500
 
+==== RPI ===<br>
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+
+@xset s noblank<br>
+@xset s off<br>
+@xset -dpms<br>
+

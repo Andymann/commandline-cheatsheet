@@ -54,3 +54,8 @@ fi
 
 docker run -it --entrypoint=/bin/bash name-of-image  
 (dann per CMD weitermachen)
+
+
+# === Linux Mount Network Drive ===<br>
+
+sudo mount -t cifs -o guest //WindowsPC/share1 /mnt/mountfoldername

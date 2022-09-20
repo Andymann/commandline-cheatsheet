@@ -59,3 +59,8 @@ docker run -it --entrypoint=/bin/bash name-of-image
 # === Linux Mount Network Drive ===<br>
 
 sudo mount -t cifs -o guest //WindowsPC/share1 /mnt/mountfoldername
+
+
+# === Spotdl LDM ===<br>
+
+docker run -v /Users/andyfischer/Documents/spotdl/docker/LDM22:/music spotdl/spotify-downloader download query "https://open.spotify.com/playlist/7MyAH7PSi9oEhesI2jlmLF?si=b84195fc651440e5"

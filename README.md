@@ -64,3 +64,10 @@ sudo mount -t cifs -o guest //WindowsPC/share1 /mnt/mountfoldername
 # === Spotdl LDM ===<br>
 
 docker run -v /Users/andyfischer/Documents/spotdl/docker/LDM22:/music spotdl/spotify-downloader download query "https://open.spotify.com/playlist/7MyAH7PSi9oEhesI2jlmLF?si=b84195fc651440e5"
+
+
+# === MAC Recursively process *.wav files ===<br>
+
+find -E . -regex '.*(wav)' | while read file; do<br>
+	ffmpeg -i "./$file" "./${file%.*}.mp3";
+done

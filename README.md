@@ -68,4 +68,4 @@ docker run -v /Users/andyfischer/Documents/spotdl/docker/LDM22:/music spotdl/spo
 
 # === MAC Recursively process *.wav files ===<br>
 
-find -E . -regex '.*(wav)' | while read file; do ffmpeg -y -i "./$file" -acodec pcm_s16le "./${file%.wav} 16bit.wav"; done
+find -E . -regex '.*(wav)' | while read file; do ffmpeg -y -i "./$file" -acodec pcm_s16le "./${file%.wav}_16bit.wav" && rm ./$file; done
